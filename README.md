@@ -1,5 +1,8 @@
+Projeto criado para a disciplina Programação para Dispositivos Móveis do curso de Tecnologia de Sistemas para Internet da Universidade Tecnológica Federal do Paraná (UTFPR) - Polo de Guarapuava | 2022/02
+
 ### Português-BR
 - **Nome do app:** Caixa de Remédios
+- **Código:** React Native (Typescript)
 - **Principais funcionalidades:** 
     * Cadastrar remédios: nome, vencimento, para que serve, componente ativo, quantidade, tipo (capsula, pílula...)
     * Controle de vencimento: avisa quando um remédio está para vencer
@@ -9,6 +12,7 @@
 
 ### English
 - **App name:**  *Medice Box* (Caixa de Remédios)
+- **Code:** React Native (Typescript)
 - **Main features:**
     * Register medicines: name, expiration date, what it is for, active component, quantity, type (capsule, pill...)
     * Expiration control: warns when a drug is about to expire
