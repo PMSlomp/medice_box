@@ -1,12 +1,8 @@
 import { Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-// import logo from '../../../../assets/logo.png';
 import InfoHeader from './InfoHeader';
 import Add from './ButtonAdd';
-
-// const width = Dimensions.get('screen').width;
-// const height = Dimensions.get('screen').height;
 
 export default function Header() {
     return (

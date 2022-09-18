@@ -1,7 +1,7 @@
 import { StatusBar, SafeAreaView, StyleSheet, View } from 'react-native';
 import Box from './scr/screens/Box';
 import { useFonts, Nunito_400Regular, Nunito_700Bold ,Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
-import ListMedicines from './scr/components/ListMedicines';
+import LMedicines from './scr/components/LMedicine';
 import mock from './scr/mocks/medicines'
 import Body from './scr/screens/Box/components/Body';
 
@@ -20,7 +20,7 @@ export default function App() {
     <SafeAreaView>
       
       <StatusBar />
-      <Box/>
+      <Box mock={mock}/>
       
     </SafeAreaView>
   );

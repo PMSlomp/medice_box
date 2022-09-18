@@ -8,6 +8,9 @@ Projeto criado para a disciplina Programação para Dispositivos Móveis do curs
     * Controle de vencimento: avisa quando um remédio está para vencer
     * Busca fácil de remédios por sua funcionalidade (febre, alergia...)
 - **Cronograma de desenvolvimento:** 
+    * A1: Tela principal e de Cadastro já estilizadas (esqueleto)
+    * A2: Tela Princial, Cadastro e Remédio já totalmente estililizadas
+    * Final: Integração 100% com o banco de dados
 
 
 ### English

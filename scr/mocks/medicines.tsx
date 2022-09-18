@@ -1,7 +1,8 @@
 export type TMedicine = {name:string, qtd:number, expire:string, component:string}
-export type TListMedicines = {medicines:Array<TMedicine>}
+export type TTypes = {value:string, label:string}
+export type TListMock = {medicines:Array<TMedicine>, typesMeds:Array<TTypes>}
 
-const listMedicines:TListMedicines = {
+const listMock:TListMock = {
     medicines: 
     [
         {
@@ -22,8 +23,23 @@ const listMedicines:TListMedicines = {
             expire: "02/23",
             component: "compo 3",
         },
+    ],
+    typesMeds: 
+    [
+        {
+            value: "1",
+            label: "Tipo 1"
+        },
+        {
+            value: "2",
+            label: "Tipo 2"
+        },
+        {
+            value: "3",
+            label: "Tipo 3"
+        },
     ]
     
 }
 
-export default listMedicines;
+export default listMock;
