@@ -1,39 +1,42 @@
-import { FlatList, ScrollView, Text, ListRenderItem, View, StyleSheet} from 'react-native';
-import React from 'react';
-import Header from './components/Header';
-import Body from './components/Body';
-import LMedicine from '../../components/LMedicine';
+import React from "react";
+import { FlatList, ListRenderItemInfo } from "react-native";
+import LMedicine from "../../components/LMedicine";
+import Body from "./components/Body";
+import Header from "./components/Header";
 // import mock from '../../mocks/medicines'
-import CampoSelecao from '../../components/CampoSelecao';
-import { TListMock } from '../../mocks/medicines';
-import { TMedicine } from '../../mocks/medicines';
-import FontText from '../../components/FontText';
-import Busca from '../../components/Busca';
+import Busca from "../../components/Busca";
+import { TListMock, TMedicine } from "../../mocks/medicines";
 
-interface ListMockProps{mock:TListMock}
+interface ListMockProps {
+  mock: TListMock;
+}
 
-export default function Box({ mock }:ListMockProps) {
+export default function Box({ mock }: ListMockProps) {
+  const renderItem = (info: ListRenderItemInfo<TMedicine>) => {
+    const item = info.item;
+    return <LMedicine item={item} />;
+  };
 
-    const renderItem = ({item: {name, qtd}}) => <FontText style>{ name } --- { qtd } </FontText>
-
-    return (
+  return (
     <>
-        <FlatList
-            data={mock.medicines}
-            renderItem={renderItem}
-            keyExtractor={({name}) => name} 
-            ListHeaderComponent={() => {
-                return <>
-                    <Header/>
-                    <Body>
-                        {/* <ListMedicines data={mock}/> */}
-                        <Busca mock={mock} text={"Nome: "}/>
-                        <Busca mock={mock} text={"Tipo: "}/>
-                        <Busca mock={mock} text={"Indicação: "}/>                      
-                    </Body>
-                </>
-            }}
-        />
+      <FlatList
+        data={mock.medicines}
+        renderItem={renderItem}
+        keyExtractor={({ name }) => name}
+        ListHeaderComponent={() => {
+          return (
+            <>
+              <Header />
+              <Body>
+                {/* <ListMedicines data={mock}/> */}
+                <Busca mock={mock} text={"Nome: "} />
+                <Busca mock={mock} text={"Tipo: "} />
+                <Busca mock={mock} text={"Indicação: "} />
+              </Body>
+            </>
+          );
+        }}
+      />
     </>
-    )
+  );
 }

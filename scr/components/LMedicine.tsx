@@ -1,25 +1,24 @@
-import { FlatList, Image, ListRenderItem, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import FontText from './FontText';
-// import listMedicines from '../mocks/medicines';
-import { TMedicine } from '../mocks/medicines';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { TMedicine } from "../mocks/medicines";
+import FontText from "./FontText";
 
-interface ListMedicinesProps{item:ListRenderItem<TMedicine>}
-// interface ListMedicinesProps{name:string, qtd:number, expire:string, component:string}
-// export default function LMedicine({ name, qtd, expire, component}:ListMedicinesProps) 
-export default function LMedicine({ item}:ListMedicinesProps) {
+interface ListMedicinesProps {
+  item: TMedicine;
+}
 
-  // const renderItem = ({item: {name, qtd}}) => <FontText style={style.general}>{ name } --- { qtd } </FontText>
-  
+export default function LMedicine({ item }: ListMedicinesProps) {
   return (
-      <>
-        <FontText style={style.general}>{ name } --- { qtd } </FontText>
-      </>
-    )
+    <>
+      <FontText style={style.general}>
+        {item.name} --- {item.qtd} --- {item.expire}
+      </FontText>
+    </>
+  );
 }
 
 const style = StyleSheet.create({
   general: {
     flexDirection: "row",
-  }
-})
+  },
+});
