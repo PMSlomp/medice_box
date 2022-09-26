@@ -62,3 +62,26 @@ export const Selects = {
         label: "Indicação 3",
     }]
 }
+
+
+export type MedicineList = Array<ValueMedicines>;
+
+export type ValueMedicines = {
+    value: string;
+    label: string;
+};
+
+export const Medicines = [
+    {   
+        value: "0",
+        label: "Remédio 1",
+    },
+    {   
+        value: "1",
+        label: "Remédio 2",
+    },
+    {   
+        value: "2",
+        label: "Remédio 3",
+    }
+]

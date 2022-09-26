@@ -1,10 +1,14 @@
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
-import SelectField from '../../global/components/select';
-import { ButtonAdd } from "./components/buttonAdd";
 
-import * as B from "./styles"
-import * as C from "../../global/components/styles"
+
+import { FlatList, StyleSheet } from "react-native";
+import { BoxBody } from "../boxBody";
+import { ValueMedicines, MedicineList, Medicines } from '../../mocks/selects';
+import { ListMedicine } from "../boxBody/components/listMedicine";
+import styled from 'styled-components/native';
+
+
+interface SelectsProps{item:string}
 
 interface HomeProps {
     navigation: any;
@@ -12,28 +16,24 @@ interface HomeProps {
 
 export function Box({ navigation }: HomeProps) {
 
-    function handleNavigateToAdd() {
-        navigation.navigate('Add');
-    }
+    // isso vira um useEffect no futuro (para buscar do banco ou algo do tipo)
+    const medicine = Medicines
 
-    return <B.Container>
-        <B.Header>
-            <B.Logo source={require(`../../../assets/img/logo.png`)}/>
-            <B.ButtonCont onPress={handleNavigateToAdd}>
-                <ButtonAdd/>
-            </B.ButtonCont>
-        </B.Header>
-        <B.HeaderInfo></B.HeaderInfo>
-        <B.Filters>
-            <C.SelectContainer>
-                <SelectField item="name"/>
-            </C.SelectContainer>
-            <C.SelectContainer>
-                <SelectField item="types"/>
-            </C.SelectContainer>
-            <C.SelectContainer>
-                <SelectField item="ind"/>
-            </C.SelectContainer>
-        </B.Filters>
-    </B.Container>
+    return  (
+        <FlatList data={medicine}
+            renderItem={info => ListMedicine(info.item)}
+            contentContainerStyle={style.list}
+            ListHeaderComponent={
+                <BoxBody navigation={navigation}/>
+            }
+        />
+
+    )
 }
+
+const style = StyleSheet.create({
+    list: {
+        // paddingHorizontal: 10,
+        backgroundColor: '#eed7f4',
+    }
+})
