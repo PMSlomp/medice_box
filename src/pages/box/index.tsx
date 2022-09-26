@@ -3,12 +3,10 @@ import React from "react";
 
 import { FlatList, StyleSheet } from "react-native";
 import { BoxBody } from "../boxBody";
-import { ValueMedicines, MedicineList, Medicines } from '../../mocks/selects';
+import { Medicines } from '../../mocks/selects';
 import { ListMedicine } from "../boxBody/components/listMedicine";
 import styled from 'styled-components/native';
 
-
-interface SelectsProps{item:string}
 
 interface HomeProps {
     navigation: any;
@@ -33,7 +31,8 @@ export function Box({ navigation }: HomeProps) {
 
 const style = StyleSheet.create({
     list: {
-        // paddingHorizontal: 10,
+        marginTop: 2,
+        height: "100%",
         backgroundColor: '#eed7f4',
     }
 })

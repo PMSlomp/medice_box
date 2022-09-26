@@ -44,13 +44,20 @@ export const NameButton = styled.Text`
 
 export const ListContainer = styled.View`
     ${({theme}) => css`
-        height: 50px;
         justifyContent: center;
-        background-color: ${theme.colors.backgroudAddSelect};
         padding: 0 10px 0 10px;
+        margin-top: 5px;
+    `}
+`;
+
+export const ItemList = styled.View`
+    ${({theme}) => css`
+        height: 50px;
         border-color: ${theme.colors.backgroundElement};
         border-width: 1px;
         border-style: solid;
+        padding: 5px 10px 5px 10px;
+        backgroundColor: ${theme.colors.backgroundElement};
     `}
 `;
 

@@ -10,6 +10,8 @@ interface MedicineProps{item: ValueMedicines}
 export function ListMedicine(item: ValueMedicines) {
 
     return <BC.ListContainer>
-        <BC.ListText>{item.label} ----</BC.ListText>
+        <BC.ItemList>
+            <BC.ListText>{item.label} ----</BC.ListText>
+        </BC.ItemList>
     </BC.ListContainer>
 }
