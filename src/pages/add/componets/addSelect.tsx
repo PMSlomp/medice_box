@@ -1,7 +1,9 @@
 import React from "react";
+import { AntDesign } from '@expo/vector-icons';
 
 import * as AS from "./styles"
 import SelectField from '../../../global/components/select';
+import theme from "../../../global/styles/theme";
 
 interface Input{data:String, value:string}
 
@@ -12,7 +14,7 @@ export function AddSelect({data, value}:Input) {
             <SelectField item={value}></SelectField>
         </AS.ContSelect>
         <AS.NewType>
-            <AS.TextType>+</AS.TextType>
+            <AntDesign name="plus" size={24} color={theme.colors.textWhite} />
         </AS.NewType>
     </AS.Container>
 }

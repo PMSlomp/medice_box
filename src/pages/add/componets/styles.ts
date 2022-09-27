@@ -31,19 +31,11 @@ export const ContSelect = styled.View`
 export const NewType = styled.View`
     ${({theme}) => css`
         margin-left: 10px;
-        width: 10%;
         height: 90%;
+        aspect-ratio: 1;
         alignItems: center;
         justifyContent: center;
         border-radius: 20px;
         background-color: ${theme.colors.backgroundElement};
     `}
 `
-export const TextType = styled.Text`
-    ${({theme}) => css`
-        color:${theme.colors.textWhite};
-        fontWeight: bold;
-        font-size: 20px;
-    `}
-`
-
