@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components/native"
 
+
+//ESTILOS PARA 'input'
 export const SelectContainer = styled.View`
     ${({theme}) => css`
         margin-top: 10px;
@@ -12,7 +14,6 @@ export const SelectContainer = styled.View`
         background-color: ${theme.colors.backgroudAddSelect};
     `}
 `;
-
 export const InputContainer = styled.View`
     ${({theme}) => css`
         margin-top: 5px;
@@ -29,26 +30,28 @@ export const InputCampo = styled.Text`
         width: 25%;
     `}
 `;
+
+//ESTILOS PARA 'select'
 export const InputContSelect = styled.View`
     ${({theme}) => css`
-    width: 75%;
-    height: 90%;
-    alignItems: center;
-    justifyContent: center;
-    border-radius: 20px;
-    padding: 3px 3px 3px 3px;
-    background-color: ${theme.colors.backgroudAddSelect};
+        width: 75%;
+        height: 90%;
+        alignItems: center;
+        justifyContent: center;
+        border-radius: 20px;
+        padding: 3px 3px 3px 3px;
+        background-color: ${theme.colors.backgroudAddSelect};
     `}
-`
+`;
 export const Input = styled.TextInput`
     ${({theme}) => css`
-    height: 100%;
-    width: 75%;
-    border-radius: 20px;
-    border-color: ${theme.colors.backgroudAddSelect};
-    border-width: 3px;
-    border-style: solid;
-    padding-left: 8px;
-    background-color: ${theme.colors.textWhite};
+        height: 100%;
+        width: 75%;
+        border-radius: 20px;
+        border-color: ${theme.colors.backgroudAddSelect};
+        border-width: 3px;
+        border-style: solid;
+        padding-left: 8px;
+        background-color: ${theme.colors.textWhite};
     `}
-`
+`;

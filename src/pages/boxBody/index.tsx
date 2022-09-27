@@ -3,7 +3,7 @@ import SelectField from '../../global/components/select';
 import { ButtonAdd } from "./components/buttonAdd";
 
 import * as B from "./styles"
-import * as C from "../../global/components/styles"
+import * as Gc from "../../global/components/styles"
 
 interface HomeProps {
     navigation: any;
@@ -24,15 +24,15 @@ export function BoxBody({ navigation }: HomeProps) {
         </B.Header>
         <B.HeaderInfo></B.HeaderInfo>
         <B.Filters>
-            <C.SelectContainer>
+            <Gc.SelectContainer>
                 <SelectField item="name"/>
-            </C.SelectContainer>
-            <C.SelectContainer>
+            </Gc.SelectContainer>
+            <Gc.SelectContainer>
                 <SelectField item="types"/>
-            </C.SelectContainer>
-            <C.SelectContainer>
+            </Gc.SelectContainer>
+            <Gc.SelectContainer>
                 <SelectField item="ind"/>
-            </C.SelectContainer>
+            </Gc.SelectContainer>
         </B.Filters>
     </B.Container>
 }

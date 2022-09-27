@@ -1,11 +1,9 @@
 import React from "react";
 
-
 import { FlatList, StyleSheet } from "react-native";
 import { BoxBody } from "../boxBody";
 import { Medicines } from '../../mocks/selects';
 import { ListMedicine } from "../boxBody/components/listMedicine";
-import styled from 'styled-components/native';
 
 
 interface HomeProps {

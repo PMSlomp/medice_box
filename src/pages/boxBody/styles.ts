@@ -2,7 +2,6 @@ import styled, { css } from "styled-components/native"
 
 export const Container = styled.View`
     ${({theme}) => css`
-        // flex: 1;
         height: 280px;
         margin-top: 20px;
         background-color: ${theme.colors.background};
@@ -50,6 +49,5 @@ export const HeaderInfo = styled.View`
 
 export const Filters= styled.View`
     ${({theme}) => css`
-        padding: 0 10px 0 10px;
-        // height: 200px;
+        padding: 0px 10px 0px 10px;
 `}`;

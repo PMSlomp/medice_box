@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components/native"
 
+//ESTILOS PARA "buttonAdd"
 export const Container = styled.View`
     ${({theme}) => css`
         height: 100%;
@@ -27,7 +28,6 @@ export const Simbol = styled.Text`
     ${({theme}) => css`
         fontWeight: bold;
         fontSize: 15px;
-        // margin-top: -2px;
         color: ${theme.colors.backgroundElement};
     `}
 `
@@ -41,11 +41,11 @@ export const NameButton = styled.Text`
         background-color: ${theme.colors.backgroundElement};
     `}
 `
-
+//ESTILOS PARA "listMedicine"
 export const ListContainer = styled.View`
     ${({theme}) => css`
         justifyContent: center;
-        padding: 0 10px 0 10px;
+        padding: 0px 10px 0px 10px;
         margin-top: 5px;
     `}
 `;

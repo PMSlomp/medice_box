@@ -27,7 +27,6 @@ export const Simbol = styled.Text`
     ${({theme}) => css`
         fontWeight: bold;
         fontSize: 15px;
-        // margin-top: -2px;
         color: ${theme.colors.backgroundElement};
     `}
 `
