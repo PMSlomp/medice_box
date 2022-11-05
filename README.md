@@ -10,7 +10,13 @@ Projeto criado para a disciplina Programação para Dispositivos Móveis do curs
 - **Cronograma de desenvolvimento:** 
     * A1: Tela principal e de Cadastro já estilizadas (esqueleto)
     * A2: Tela Princial, Cadastro e Remédio já totalmente estililizadas
-    * Final: Integração 100% com o banco de dados
+    * Final: Integração 100% com o banco de dados / criação da tela de dados do remédio / implementação da API
+- **ALTERAÇÕES E MODIFICAÇÕES:**
+    * Nada foi alterado da entrega anterior
+    * Incluído ALERT no botão de "Cadastrar" na página de "Novo medicamento". Sempre que for incluso um novo medicamento um Alert será exibido confirmando o cadastro
+    * API: está sendo estudo para ser incluída para alimentar o campo 'TIPO'. Ou seja, as informações do tipo de medicamento serão lidas de uma API, a ser desenvolvida. 
+    * Recurso inédito: uso dos arquivos de style
+
 
 
 ### English
@@ -21,6 +27,7 @@ Projeto criado para a disciplina Programação para Dispositivos Móveis do curs
     * Expiration control: warns when a drug is about to expire
     * Easy search for medicines by their functionality (fever, allergy...)
 - **Development schedule:**
+
 
 
 ## Protótipos de telas | Screen prototype

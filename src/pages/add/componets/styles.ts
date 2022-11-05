@@ -39,3 +39,34 @@ export const NewType = styled.View`
         background-color: ${theme.colors.backgroundElement};
     `}
 `
+
+//ESTILOS PARA "buttonAdd"
+export const ButtonCont = styled.TouchableOpacity`
+    ${() => css`
+        width: 100%;
+    `}
+`;
+
+export const AddContainer = styled.View`
+    ${({theme}) => css`
+        height: 50px;
+        width: 70%;
+        border-radius: 20px;
+        alignItems: center;
+        justify-content: center;
+        padding: 4px 4px 4px 4px;
+        margin-top: 30px;
+        margin-left: 15%;
+        background-color: ${theme.colors.backgroundElement};
+    `}
+`;
+
+export const NameButton = styled.Text`
+    ${({theme}) => css`
+        padding-right: 5px;
+        margin-left: 5px;
+        color: ${theme.colors.textWhite};
+        border-radius: 20px;
+        background-color: ${theme.colors.backgroundElement};
+    `}
+`
