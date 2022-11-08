@@ -1,29 +1,38 @@
-import{ SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import{ SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
-import { createConnection } from "typeorm";
 
 import theme from './src/global/styles/theme';
 import Routes from './src/routes';
-import config from "./src/database/config";
 import { Add } from './src/pages/add';
 import { Box } from './src/pages/box';
+import Tipo from "./src/database/models/Tipo";
 
 
 
 export default function App() {
-  // const connect = React.useCallback(async () => {
-  //   try {
-  //     const connection = await createConnection(config);
-  //     // const tipo = await connection.getRepository("Tipo").find();
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // });
+  const exampleOperations = async () => {
+    //Readme: https://github.com/dflourusso/expo-sqlite-orm#readme
 
-  // React.useEffect(() => {
-  //   connect(); // this must be done once in the App's entry point (I suggest here in App.js)
-  // }, []);
+    const t1 = new Tipo({ label: "Tipo db 1" });
+    t1.save();
+
+    const t2 = new Tipo({ label: "Tipo db 2" });
+    t2.save();
+
+    const t3 = new Tipo({ label: "Tipo db 3" });
+    t3.save();
+
+    // console.log(t1, t2);
+    // const all = await Tipo.query();
+    // console.log(all);
+  };
+
+  React.useEffect(() => {
+    Tipo.dropTable(); // Testing only!! Remove this.
+    Tipo.createTable();
+    exampleOperations();
+  }, []);
 
   return (
     <SafeAreaProvider>

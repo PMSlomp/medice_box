@@ -3293,6 +3293,11 @@ expo-modules-core@0.11.5:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
+expo-sqlite-orm@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/expo-sqlite-orm/-/expo-sqlite-orm-1.6.0.tgz#472a8f6e2ba3e41a75a5962198f0c0774439a682"
+  integrity sha512-vSUuScrw9JQnR5ES2XhnYAZvgmkdQCv/FRntycZZN5P7v0jmBbfONilgZxvNXMOzZHxf1oUrug2PeGezszchhg==
+
 expo-sqlite@~10.3.0:
   version "10.3.0"
   resolved "https://registry.yarnpkg.com/expo-sqlite/-/expo-sqlite-10.3.0.tgz#c2d7fa2f6777b8a8730a38cf77b2c57541ada66b"

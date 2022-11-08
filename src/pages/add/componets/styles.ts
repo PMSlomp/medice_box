@@ -43,20 +43,20 @@ export const NewType = styled.View`
 //ESTILOS PARA "buttonAdd"
 export const ButtonCont = styled.TouchableOpacity`
     ${() => css`
-        width: 100%;
+        width: 70%;
+        margin-top: 30px;
+        margin-left: 15%;
     `}
 `;
 
 export const AddContainer = styled.View`
     ${({theme}) => css`
         height: 50px;
-        width: 70%;
+        width: 100%;
         border-radius: 20px;
         alignItems: center;
         justify-content: center;
         padding: 4px 4px 4px 4px;
-        margin-top: 30px;
-        margin-left: 15%;
         background-color: ${theme.colors.backgroundElement};
     `}
 `;

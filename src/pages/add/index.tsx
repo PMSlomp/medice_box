@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Alert } from "react-native";
 
 import * as A from "./styles"
@@ -6,12 +6,26 @@ import { ButtonCont } from "./componets/styles"
 import { AddSelect } from './componets/addSelect';
 import { Input } from "../../global/components/input";
 import { ButtonAdd } from './componets/buttonAdd';
+import Tipo from "../../database/models/Tipo";
 
 interface AddProps {
     route: any;
 }
 
 export function Add({ route }: AddProps) {
+
+    const [tipos, setTipos] = useState<any>([]);
+
+    const fetchData = async () => {
+        const allTipos = await Tipo.query();
+        // const allNames = await Tipo.query();
+        // const allInd = await Tipo.query();
+        setTipos(allTipos);
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const ConfirmaCadastro = () => {
         Alert.alert(
@@ -33,9 +47,9 @@ export function Add({ route }: AddProps) {
         <A.Body>
             <Input data='Nome' />
             <Input data='Laboratório'/>
-            <AddSelect data='Indicação' value='indicate'/>
-            {/* <AddSelect data='Tipo' value='types'/> */}
-            <AddSelect data='Tipo' value='types'/>
+            {/* <AddSelect nome='Indicação' value='indicate'/> */}
+            <AddSelect nome='Tipo' value={tipos}/>
+            {/* <AddSelect nome='Tipo' value='types'/> */}
             <ButtonCont onPress={ConfirmaCadastro}>
                 <ButtonAdd/>
             </ButtonCont>

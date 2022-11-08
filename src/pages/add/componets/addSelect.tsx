@@ -5,13 +5,14 @@ import * as AS from "./styles"
 import SelectField from '../../../global/components/select';
 import theme from "../../../global/styles/theme";
 
-interface Input{data:String, value:string}
+interface Input{nome:String, value: Array<{ id: number; label: string }>;}
 
-export function AddSelect({data, value}:Input) {
+
+export function AddSelect({nome, value}:Input) {
     return <AS.Container >
-        <AS.Campo>{data}</AS.Campo>
+        <AS.Campo>{nome}</AS.Campo>
         <AS.ContSelect>
-            <SelectField item={value}></SelectField>
+            <SelectField data={value}></SelectField>
         </AS.ContSelect>
         <AS.NewType>
             <AntDesign name="plus" size={24} color={theme.colors.textWhite} />
