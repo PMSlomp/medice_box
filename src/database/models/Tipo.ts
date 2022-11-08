@@ -17,7 +17,7 @@ export default class Tipo extends BaseModel {
   static get columnMapping() {
     return {
       id: { type: types.INTEGER, primary_key: true, autoincrement: true }, // For while only supports id as primary key
-      tipo: { type: types.TEXT, not_null: true },
+      label: { type: types.TEXT, not_null: true },
     };
   }
 }

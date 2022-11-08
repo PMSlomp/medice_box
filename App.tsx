@@ -12,16 +12,18 @@ export default function App() {
   const exampleOperations = async () => {
     //Readme: https://github.com/dflourusso/expo-sqlite-orm#readme
 
-    const t1 = new Tipo({ tipo: "Tipo 1" });
+    const t1 = new Tipo({ label: "Tipo db 1" });
     t1.save();
 
-    const t2 = new Tipo({ tipo: "Tipo 2" });
+    const t2 = new Tipo({ label: "Tipo db 2" });
     t2.save();
 
-    console.log(t1, t2);
+    const t3 = new Tipo({ label: "Tipo db 3" });
+    t3.save();
 
-    const all = await Tipo.query();
-    console.log(all);
+    // console.log(t1, t2);
+    // const all = await Tipo.query();
+    // console.log(all);
   };
 
   React.useEffect(() => {
