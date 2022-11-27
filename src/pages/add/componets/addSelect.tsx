@@ -2,7 +2,7 @@ import React from "react";
 import { AntDesign } from '@expo/vector-icons';
 
 import * as AS from "./styles"
-import SelectField from '../../../global/components/select';
+import SelectField from '../../../global/components/selectTipo';
 import theme from "../../../global/styles/theme";
 
 interface Input{nome:String, value: Array<{ id: number; label: string }>;}

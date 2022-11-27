@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import SelectField from '../../global/components/select';
+import SelectField from '../../global/components/selectTipo';
 import { ButtonAdd } from "./components/buttonAdd";
 
 import * as B from "./styles"
 import * as Gc from "../../global/components/styles"
 import Tipo from "../../database/models/Tipo";
+import Medicamento from "../../database/models/Medicamento";
+import SelectFieldTipo from '../../global/components/selectTipo';
+import SelectFieldMed from '../../global/components/selectMedicamento';
+
 
 interface HomeProps {
     navigation: any;
@@ -12,16 +16,20 @@ interface HomeProps {
 
 export function BoxBody({ navigation }: HomeProps) {
     const [tipos, setTipos] = useState<any>([]);
+    const [medicamentos, setMedicamentos] = useState<any>([]);
 
-    const fetchData = async () => {
+    const fetchTipo = async () => {
         const allTipos = await Tipo.query();
-        // const allNames = await Tipo.query();
-        // const allInd = await Tipo.query();
         setTipos(allTipos);
+    };
+    const fetchMed = async () => {
+        const allMedicamentos = await Medicamento.query();
+        setMedicamentos(allMedicamentos);
     };
 
     useEffect(() => {
-        fetchData();
+        fetchTipo();
+        fetchMed();
     }, []);
 
     function handleNavigateToAdd() {
@@ -37,12 +45,12 @@ export function BoxBody({ navigation }: HomeProps) {
         </B.Header>
         <B.HeaderInfo></B.HeaderInfo>
         <B.Filters>
-            {/* <Gc.SelectContainer>
-                <SelectField item="name"/>
-            </Gc.SelectContainer> */}
-        <Gc.SelectContainer>
-          <SelectField data={tipos} />
-        </Gc.SelectContainer>
+            <Gc.SelectContainer>
+                <SelectFieldMed data={medicamentos}/>
+            </Gc.SelectContainer>
+            <Gc.SelectContainer>
+                <SelectFieldTipo data={tipos} />
+            </Gc.SelectContainer>
         {/* <Gc.SelectContainer>
                 <SelectField item="ind"/>
             </Gc.SelectContainer> */}

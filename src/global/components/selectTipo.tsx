@@ -6,8 +6,8 @@ interface SelectsProps {
   data: Array<{ id: number; label: string }>;
 }
 
-export default function SelectField({ data }: SelectsProps) {
-  const [pkVal, setPkVal] = useState("DEf");
+export default function SelectFieldTipo({ data }: SelectsProps) {
+  const [pkVal, setPkVal] = useState("DEF");
 
   return (
     <Picker

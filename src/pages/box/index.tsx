@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { FlatList, StyleSheet } from "react-native";
 import { BoxBody } from "../boxBody";
-import { Medicines } from '../../mocks/selects';
 import { ListMedicine } from "../boxBody/components/listMedicine";
+import Medicamento from "../../database/models/Medicamento";
 
 
 interface HomeProps {
@@ -11,9 +11,19 @@ interface HomeProps {
 }
 
 export function Box({ navigation }: HomeProps) {
+    
+    const [medicamentos, setMedicamentos] = useState<any>([]);
 
-    // isso vira um useEffect no futuro (para buscar do banco ou algo do tipo)
-    const medicine = Medicines
+    const fetchData = async () => {
+        const allMedicamentos = await Medicamento.query();
+        setMedicamentos(allMedicamentos);
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const medicine = medicamentos
 
     return  (
         <FlatList data={medicine}

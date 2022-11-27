@@ -5,7 +5,7 @@ import * as AS from "./styles"
 interface Input{data:String}
 
 export function Input({data}:Input) {
-    const [text, onChangeText] = React.useState("Nome");
+    const [text, onChangeText] = React.useState('');
     
     return <AS.InputContainer>
         <AS.InputCampo>{data}</AS.InputCampo>

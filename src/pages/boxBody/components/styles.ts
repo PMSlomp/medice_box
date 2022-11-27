@@ -24,6 +24,18 @@ export const SimbolBox = styled.View`
     `}
 `
 
+export const DeleteType = styled.View`
+    ${({theme}) => css`
+        margin-left: 10px;
+        height: 90%;
+        aspect-ratio: 1;
+        alignItems: center;
+        justifyContent: center;
+        border-radius: 20px;
+        background-color: ${theme.colors.background};
+    `}
+`
+
 export const Simbol = styled.Text`
     ${({theme}) => css`
         fontWeight: bold;
@@ -57,6 +69,8 @@ export const ItemList = styled.View`
         border-width: 1px;
         border-style: solid;
         padding: 5px 10px 5px 10px;
+        flexDirection: row;
+        justify-content: space-between;
         backgroundColor: ${theme.colors.backgroundElement};
     `}
 `;

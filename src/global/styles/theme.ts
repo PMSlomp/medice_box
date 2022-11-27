@@ -3,6 +3,7 @@ export default {
         background: '#eed7f4',
         backgroundElement: '#48015b',
         textWhite: '#fff',
-        backgroudAddSelect: '#b486e1'
+        backgroudAddSelect: '#b486e1',
+        textBlack: '#000'
     }
 }
