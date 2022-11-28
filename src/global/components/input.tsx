@@ -1,14 +1,18 @@
 import React from "react";
 
-import * as AS from "./styles"
+import * as AS from "./styles";
 
-interface Input{data:String}
+interface Input {
+  data: String;
+  value: string;
+  onChange: Function;
+}
 
-export function Input({data}:Input) {
-    const [text, onChangeText] = React.useState('');
-    
-    return <AS.InputContainer>
-        <AS.InputCampo>{data}</AS.InputCampo>
-        <AS.Input onChangeText={onChangeText} value={text}/>
+export function Input({ data, value, onChange }: Input) {
+  return (
+    <AS.InputContainer>
+      <AS.InputCampo>{data}</AS.InputCampo>
+      <AS.Input onChangeText={onChange} value={value} />
     </AS.InputContainer>
+  );
 }
