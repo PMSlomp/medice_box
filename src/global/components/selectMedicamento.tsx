@@ -4,16 +4,20 @@ import React, { useState } from "react";
 
 interface SelectsProps {
   data: Array<{ id: number; nome: string; laboratorio: string; tipo: string }>;
+  value: string;
+  onChange: Function;
 }
 
-export default function SelectFieldMed({ data }: SelectsProps|SelectsProps) {
-  const [pkVal, setPkVal] = useState("DEF");
-
+export default function SelectFieldMed({
+  data,
+  value,
+  onChange,
+}: SelectsProps | SelectsProps) {
   return (
     <Picker
-      selectedValue={pkVal}
+      selectedValue={value}
       onValueChange={(itemValue, itemIndex) => {
-        setPkVal(itemValue);
+        onChange(itemValue);
       }}
       style={style.option}
     >

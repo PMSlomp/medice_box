@@ -25,11 +25,15 @@ export function Box() {
     });
   }, []);
 
+  const onSearch = (tipo: string, medicamento: string) => {
+    console.log("Search!!", tipo, medicamento);
+  };
+
   const medicine = medicamentos;
 
   return (
     <View style={style.container}>
-      <BoxBody navigation={navigation} />
+      <BoxBody navigation={navigation} onSearch={onSearch} />
       <FlatList
         data={medicine}
         renderItem={(info) => ListMedicine(info.item)}

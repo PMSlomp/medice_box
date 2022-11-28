@@ -8,14 +8,19 @@ import Tipo from "../../database/models/Tipo";
 import Medicamento from "../../database/models/Medicamento";
 import SelectFieldTipo from "../../global/components/selectTipo";
 import SelectFieldMed from "../../global/components/selectMedicamento";
+import { Button } from "react-native";
 
 interface HomeProps {
   navigation: any;
+  onSearch: (tipo: string, medicamento: string) => void;
 }
 
-export function BoxBody({ navigation }: HomeProps) {
+export function BoxBody({ navigation, onSearch }: HomeProps) {
   const [tipos, setTipos] = useState<any>([]);
   const [medicamentos, setMedicamentos] = useState<any>([]);
+
+  const [tipo, setTipo] = useState("");
+  const [medicamento, setMedicamento] = useState("");
 
   const fetchTipo = async () => {
     const allTipos = await Tipo.query();
@@ -46,15 +51,21 @@ export function BoxBody({ navigation }: HomeProps) {
       <B.HeaderInfo></B.HeaderInfo>
       <B.Filters>
         <Gc.SelectContainer>
-          <SelectFieldMed data={medicamentos} />
+          <SelectFieldMed
+            data={medicamentos}
+            value={medicamento}
+            onChange={setMedicamento}
+          />
         </Gc.SelectContainer>
         <Gc.SelectContainer>
-          <SelectFieldTipo data={tipos} />
+          <SelectFieldTipo data={tipos} value={tipo} onChange={setTipo} />
         </Gc.SelectContainer>
         {/* <Gc.SelectContainer>
                 <SelectField item="ind"/>
             </Gc.SelectContainer> */}
       </B.Filters>
+
+      <Button onPress={() => onSearch(tipo, medicamento)} title="ASD" />
     </B.Container>
   );
 }

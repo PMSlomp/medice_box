@@ -5,18 +5,22 @@ import { NewMedicineContext } from "../../contexts/NewMedicineContext";
 
 interface SelectsProps {
   data: Array<{ id: number; label: string }>;
+  value: string;
+  onChange: Function;
 }
 
-export default function SelectFieldTipo({ data }: SelectsProps) {
+export default function SelectFieldTipo({
+  data,
+  value,
+  onChange,
+}: SelectsProps) {
   const ctx = useContext(NewMedicineContext);
-
-  const [pkVal, setPkVal] = useState("DEF");
 
   return (
     <Picker
-      selectedValue={pkVal}
+      selectedValue={value}
       onValueChange={(itemValue, itemIndex) => {
-        setPkVal(itemValue);
+        onChange(itemValue);
         ctx.setTipo(itemValue);
       }}
       style={style.option}
