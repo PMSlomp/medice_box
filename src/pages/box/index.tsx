@@ -1,44 +1,49 @@
 import React, { useEffect, useState } from "react";
 
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { BoxBody } from "../boxBody";
 import { ListMedicine } from "../boxBody/components/listMedicine";
 import Medicamento from "../../database/models/Medicamento";
+import { useNavigation } from "@react-navigation/native";
 
-interface HomeProps {
-  navigation: any;
-}
-
-export function Box({ navigation }: HomeProps) {
+export function Box() {
   const [medicamentos, setMedicamentos] = useState<any>([]);
+
+  const navigation = useNavigation();
 
   const fetchData = async () => {
     const allMedicamentos = await Medicamento.query();
-
-    console.log(allMedicamentos);
-
+    // console.log(allMedicamentos);
     setMedicamentos(allMedicamentos);
   };
 
   useEffect(() => {
     fetchData();
+
+    navigation.addListener("focus", () => {
+      fetchData();
+    });
   }, []);
 
   const medicine = medicamentos;
 
   return (
-    <FlatList
-      data={medicine}
-      renderItem={(info) => ListMedicine(info.item)}
-      contentContainerStyle={style.list}
-      ListHeaderComponent={<BoxBody navigation={navigation} />}
-    />
+    <View style={style.container}>
+      <BoxBody navigation={navigation} />
+      <FlatList
+        data={medicine}
+        renderItem={(info) => ListMedicine(info.item)}
+      />
+    </View>
   );
 }
 
 const style = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   list: {
-    marginTop: 2,
+    // marginTop: 2,
     height: "100%",
     backgroundColor: "#eed7f4",
   },
