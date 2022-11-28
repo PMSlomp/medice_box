@@ -5,42 +5,41 @@ import { BoxBody } from "../boxBody";
 import { ListMedicine } from "../boxBody/components/listMedicine";
 import Medicamento from "../../database/models/Medicamento";
 
-
 interface HomeProps {
-    navigation: any;
+  navigation: any;
 }
 
 export function Box({ navigation }: HomeProps) {
-    
-    const [medicamentos, setMedicamentos] = useState<any>([]);
+  const [medicamentos, setMedicamentos] = useState<any>([]);
 
-    const fetchData = async () => {
-        const allMedicamentos = await Medicamento.query();
-        setMedicamentos(allMedicamentos);
-    };
+  const fetchData = async () => {
+    const allMedicamentos = await Medicamento.query();
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    console.log(allMedicamentos);
 
-    const medicine = medicamentos
+    setMedicamentos(allMedicamentos);
+  };
 
-    return  (
-        <FlatList data={medicine}
-            renderItem={info => ListMedicine(info.item)}
-            contentContainerStyle={style.list}
-            ListHeaderComponent={
-                <BoxBody navigation={navigation}/>
-            }
-        />
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    )
+  const medicine = medicamentos;
+
+  return (
+    <FlatList
+      data={medicine}
+      renderItem={(info) => ListMedicine(info.item)}
+      contentContainerStyle={style.list}
+      ListHeaderComponent={<BoxBody navigation={navigation} />}
+    />
+  );
 }
 
 const style = StyleSheet.create({
-    list: {
-        marginTop: 2,
-        height: "100%",
-        backgroundColor: '#eed7f4',
-    }
-})
+  list: {
+    marginTop: 2,
+    height: "100%",
+    backgroundColor: "#eed7f4",
+  },
+});
