@@ -1,0 +1,32 @@
+{
+    "indicacao": [
+    {   
+        "value": "0",
+        "label": "Dor de cabeça"
+    },
+    {   
+        "value": "1",
+        "label": "Dor abdominal"
+    },
+    {    
+        "value": "2",
+        "label": "Febre"
+    },
+    {   
+        "value": "3",
+        "label": "Corisa"
+    },
+    {   
+        "value": "4",
+        "label": "Gripe"
+    },
+    {   
+        "value": "5",
+        "label": "Alergia"
+    },
+    {   
+        "value": "6",
+        "label": "..."
+    }
+]
+}

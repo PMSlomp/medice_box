@@ -26,8 +26,6 @@ export function Add({ route }: AddProps) {
 
   const fetchData = async () => {
     const allTipos = await Tipo.query();
-    // const allNames = await Tipo.query();
-    // const allInd = await Tipo.query();
     setTipos(allTipos);
   };
 

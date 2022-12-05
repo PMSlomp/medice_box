@@ -42,14 +42,20 @@ export default function App() {
     if (tipos.length == 0) {
       console.log("Seeding database...");
 
-      const t1 = new Tipo({ label: "Tipo db 1" });
+      const t1 = new Tipo({ label: "Analgésico" });
       t1.save();
 
-      const t2 = new Tipo({ label: "Tipo db 2" });
+      const t2 = new Tipo({ label: "Anti-inflamatório" });
       t2.save();
 
-      const t3 = new Tipo({ label: "Tipo db 3" });
+      const t3 = new Tipo({ label: "Anti-térmico" });
       t3.save();
+
+      const t4 = new Tipo({ label: "Antibiótico" });
+      t4.save();
+
+      const t5 = new Tipo({ label: "Outro" });
+      t5.save();
     }
   };
 
