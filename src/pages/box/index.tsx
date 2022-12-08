@@ -25,13 +25,27 @@ export function Box() {
     });
   }, []);
 
-  const onSearch = async (tipo?: string, medicamento?: string) => {
-    // const med = null
-    // if (tipo) {
-        const med = await Medicamento.findBy({tipo_eq: "Outro"}); //Busca apenas 1
-        console.log(med);
-        setMedicamentos(med);
-        console.log("Search!!", tipo, medicamento);
+  const onSearch = async (tipo?: string) => {
+    // where para todos
+    let where = {};
+
+    // se o tipo existir, filtrar
+    if (tipo) {
+      where = {
+        tipo_eq: tipo,
+      };
+    }
+
+    const options = {
+      columns: "id, nome, laboratorio, tipo",
+      where,
+      order: "nome ASC",
+    };
+
+    const med = await Medicamento.query(options); //Busca apenas 1
+    // const med = await Medicamento.findBy({tipo_eq: "Outro"}); //Busca apenas 1
+    console.log(med);
+    setMedicamentos(med);
     // }
     // else {
     //     const med = await Medicamento.query()

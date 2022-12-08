@@ -12,7 +12,7 @@ import { Button } from "react-native";
 
 interface HomeProps {
   navigation: any;
-  onSearch: (tipo: string, medicamento: string) => void;
+  onSearch: (tipo?: string) => void;
 }
 
 export function BoxBody({ navigation, onSearch }: HomeProps) {
@@ -58,9 +58,9 @@ export function BoxBody({ navigation, onSearch }: HomeProps) {
             </Gc.SelectContainer> */}
       </B.Filters>
       <B.Search>
-        <Button onPress={() => onSearch(tipo, medicamento)} title="Buscar" />
+        <Button onPress={() => onSearch(tipo)} title="Buscar" />
+        <Button onPress={() => onSearch(undefined)} title="Limpar" />
       </B.Search>
-      
     </B.Container>
   );
 }

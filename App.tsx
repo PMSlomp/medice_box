@@ -11,6 +11,10 @@ export default function App() {
   // Readme: https://github.com/dflourusso/expo-sqlite-orm#readme
 
   const seedDatabase = async () => {
+    console.log("Creating tables...");
+    Tipo.createTable();
+    Medicamento.createTable();
+
     const tipos = await Tipo.query();
     if (tipos.length == 0) {
       console.log("Seeding database...");
@@ -33,12 +37,9 @@ export default function App() {
   };
 
   React.useEffect(() => {
-    // exampleOperations();
-    seedDatabase();
     // Tipo.destroyAll();
-    // Medicamento.destroyAll(); // TEMPORÁRIO
-    // Tipo.createTable();
-    // Medicamento.createTable();
+    // Medicamento.destroyAll();
+    seedDatabase();
   }, []);
 
   return (
