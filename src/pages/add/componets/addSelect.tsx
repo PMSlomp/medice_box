@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AntDesign } from "@expo/vector-icons";
 
 import * as AS from "./styles";
+
 import Tipo from "../../../database/models/Tipo";
 import SelectFieldTipo from '../../../global/components/selectTipo';
 
