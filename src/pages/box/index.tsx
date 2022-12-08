@@ -20,30 +20,30 @@ export function Box() {
   useEffect(() => {
     fetchData();
 
-    // navigation.addListener("focus", () => {
-    //   fetchData();
-    // });
+    navigation.addListener("focus", () => {
+      fetchData();
+    });
   }, []);
 
-//   const fetchData = async (tipo?: string, medicamento?: string) => {
-//     const med = null
-//     if (tipo) {
-//         const med = await Medicamento.findBy({tipo_eq: "Outro"}); //Busca apenas 1
-//         console.log(med);
-//         setMedicamentos(med);
-//         console.log("Search!!", tipo, medicamento);
-//     }
-//     else {
-//         const med = await Medicamento.query()
-//     }
-//     setMedicamentos(med);
-//   };
+  const onSearch = async (tipo?: string, medicamento?: string) => {
+    // const med = null
+    // if (tipo) {
+        const med = await Medicamento.findBy({tipo_eq: "Outro"}); //Busca apenas 1
+        console.log(med);
+        setMedicamentos(med);
+        console.log("Search!!", tipo, medicamento);
+    // }
+    // else {
+    //     const med = await Medicamento.query()
+    // }
+    // setMedicamentos(med);
+  };
 
   const medicine = medicamentos;
 
   return (
     <View style={style.container}>
-      <BoxBody navigation={navigation} onSearch={fetchData} />
+      <BoxBody navigation={navigation} onSearch={onSearch} />
       <FlatList
         data={medicine}
         renderItem={(info) => ListMedicine(info.item)}
