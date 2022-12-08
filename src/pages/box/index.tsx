@@ -25,6 +25,10 @@ export function Box() {
     });
   }, []);
 
+  const onDeleteCallback = async () => {
+    await fetchData();
+  };
+
   const onSearch = async (tipo?: string) => {
     // where para todos
     let where = {};
@@ -60,7 +64,7 @@ export function Box() {
       <BoxBody navigation={navigation} onSearch={onSearch} />
       <FlatList
         data={medicine}
-        renderItem={(info) => ListMedicine(info.item)}
+        renderItem={(info) => ListMedicine(info.item, onDeleteCallback)}
       />
     </View>
   );
