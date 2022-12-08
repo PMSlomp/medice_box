@@ -19,7 +19,7 @@ export const Campo = styled.Text`
 `;
 export const ContSelect = styled.View`
     ${({theme}) => css`
-        width: 60%;
+        width: 75%;
         height: 90%;
         alignItems: center;
         justifyContent: center;

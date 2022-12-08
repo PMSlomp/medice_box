@@ -75,7 +75,6 @@ export function Add({ route }: AddProps) {
           />
           {/* <AddSelect nome='Indicação' value='indicate'/> */}
           <AddSelect nome="Tipo" value={tipos} />
-          {/* <AddSelect nome='Tipo' value='types'/> */}
           <ButtonCont onPress={ConfirmaCadastro}>
             <ButtonAdd />
           </ButtonCont>

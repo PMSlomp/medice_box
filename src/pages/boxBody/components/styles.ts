@@ -24,7 +24,7 @@ export const SimbolBox = styled.View`
     `}
 `
 
-export const DeleteType = styled.Button`
+export const DeleteType = styled.TouchableOpacity`
     ${({theme}) => css`
         margin-left: 10px;
         height: 90%;

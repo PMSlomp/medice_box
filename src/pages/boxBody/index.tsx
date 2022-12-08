@@ -51,21 +51,16 @@ export function BoxBody({ navigation, onSearch }: HomeProps) {
       <B.HeaderInfo></B.HeaderInfo>
       <B.Filters>
         <Gc.SelectContainer>
-          <SelectFieldMed
-            data={medicamentos}
-            value={medicamento}
-            onChange={setMedicamento}
-          />
-        </Gc.SelectContainer>
-        <Gc.SelectContainer>
           <SelectFieldTipo data={tipos} value={tipo} onChange={setTipo} />
         </Gc.SelectContainer>
         {/* <Gc.SelectContainer>
                 <SelectField item="ind"/>
             </Gc.SelectContainer> */}
       </B.Filters>
-
-      <Button onPress={() => onSearch(tipo, medicamento)} title="ASD" />
+      <B.Search>
+        <Button onPress={() => onSearch(tipo, medicamento)} title="Buscar" />
+      </B.Search>
+      
     </B.Container>
   );
 }

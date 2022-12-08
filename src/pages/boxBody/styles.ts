@@ -51,3 +51,13 @@ export const Filters= styled.View`
     ${({theme}) => css`
         padding: 0px 10px 0px 10px;
 `}`;
+
+export const Search = styled.View`
+    ${({theme}) => css`
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        alignItems: center;
+    `}
+`;
