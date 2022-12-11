@@ -42,7 +42,7 @@ export function Add({ route }: AddProps) {
     try {
       const m = new Medicamento({ nome, laboratorio, tipo });
       const result = await m.save();
-      console.log("Created: ", result);
+      // console.log("Created: ", result);
 
       Alert.alert("Confirmação de Cadastro", "Remédio incluído com sucesso!", [
         {
@@ -73,8 +73,7 @@ export function Add({ route }: AddProps) {
             value={laboratorio}
             onChange={setLaboratorio}
           />
-          {/* <AddSelect nome='Indicação' value='indicate'/> */}
-          <AddSelect nome="Tipo" value={tipos} />
+          <AddSelect nome="Tipo" />
           <ButtonCont onPress={ConfirmaCadastro}>
             <ButtonAdd />
           </ButtonCont>

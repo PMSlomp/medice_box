@@ -59,5 +59,6 @@ export const Search = styled.View`
         margin-bottom: 10px;
         margin-top: 30px;
         alignItems: center;
+        justify-content: space-between;
     `}
 `;

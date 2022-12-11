@@ -13,7 +13,6 @@ export function Box() {
 
   const fetchData = async () => {
     const allMedicamentos = await Medicamento.query();
-    // console.log(allMedicamentos);
     setMedicamentos(allMedicamentos);
   };
 
@@ -30,10 +29,8 @@ export function Box() {
   };
 
   const onSearch = async (tipo?: string) => {
-    // where para todos
     let where = {};
 
-    // se o tipo existir, filtrar
     if (tipo) {
       where = {
         tipo_eq: tipo,
@@ -46,15 +43,9 @@ export function Box() {
       order: "nome ASC",
     };
 
-    const med = await Medicamento.query(options); //Busca apenas 1
-    // const med = await Medicamento.findBy({tipo_eq: "Outro"}); //Busca apenas 1
+    const med = await Medicamento.query(options);
     console.log(med);
     setMedicamentos(med);
-    // }
-    // else {
-    //     const med = await Medicamento.query()
-    // }
-    // setMedicamentos(med);
   };
 
   const medicine = medicamentos;

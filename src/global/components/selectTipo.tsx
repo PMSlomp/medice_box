@@ -4,7 +4,7 @@ import React, { useContext, useState } from "react";
 import { NewMedicineContext } from "../../contexts/NewMedicineContext";
 
 interface SelectsProps {
-  data: Array<{ id: number; label: string }>;
+  data: Array<{ name: string; url: string }>;
   value: string;
   onChange: Function;
 }
@@ -25,8 +25,8 @@ export default function SelectFieldTipo({
       }}
       style={style.option}
     >
-      {data.map(({ id, label }) => (
-        <Picker.Item value={label} label={label} key={id} />
+      {data.map(({ name, url }) => (
+        <Picker.Item value={name} label={name} key={url} />
       ))}
     </Picker>
   );
