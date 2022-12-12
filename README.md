@@ -35,11 +35,11 @@ Projeto criado para a disciplina Programação para Dispositivos Móveis do curs
 
 ## Protótipos de telas | Screen prototype
 
-<img height="180em" src="https://ibb.co/gS84K82"/>
-<img height="180em" src="https://ibb.co/89dDYzZ"/>
+<img height="180em" src="https://uploaddeimagens.com.br/images/004/257/750/full/logo_peq.png"/>
+<img height="180em" src="https://uploaddeimagens.com.br/images/004/257/747/full/tela.jpg"/>
 
 
 ## Resultado
 
-<img height="180em" src="https://ibb.co/9gCrFB8"/>
-<img height="180em" src="https://ibb.co/dD3JGcM"/>
+<img height="180em" src="https://uploaddeimagens.com.br/images/004/257/745/full/tela_1.jpg"/>
+<img height="180em" src="https://uploaddeimagens.com.br/images/004/257/743/full/tela_2.jpg"/>
